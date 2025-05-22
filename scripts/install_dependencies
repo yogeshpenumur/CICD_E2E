@@ -5,9 +5,4 @@ sudo apt update -y && sudo apt upgrade -y
 # Install Apache web server
 sudo apt install -y apache2
 
-# Enable and start Apache service
-sudo systemctl enable apache2
-sudo systemctl start apache2
 
-# Print confirmation
-echo "Apache installed and running!"
