@@ -6,9 +6,7 @@ files:
   - source: /css
     destination: /var/www/html/css/
 
-  - source: /images
-    destination: /var/www/html/images/
-
+  
   - source: /js
     destination: /var/www/html/js/
 
