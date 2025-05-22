@@ -1,3 +1,8 @@
 #!/bin/bash
-yum install -y httpd
+# Update the system before installing Apache
+sudo apt update -y && sudo apt upgrade -y
+
+# Install Apache web server
+sudo apt install -y apache2
+
 
