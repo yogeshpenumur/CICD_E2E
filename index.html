@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>AAR DEMO | AWS CLOUD DEPLOYMENT</title>
-  <style>
-    body {
-      color: #000080;
-      background-color: #FFFFFF;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-    
-    h1 {
-      font-size: 500%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-    
-    h2 {
-      font-size: 200%;
-      font-weight: normal;
-      margin-bottom: 0;
-    }
-  </style>
+    <title>Food Order App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
 </head>
 <body>
-  <div align="center">
-    <img src="https://s3.ap-south-1.amazonaws.com/www.basava.com/aar_logo_final.png" style="max-width: 20%;">
-    <h1>Congratulations!!! </h1>
-      <h2>Welcome to AAR SOURCE| Ram Hemareddy</h2>
-    <h3>This application was deployed using AWS CodeDeploy.</h3>
-    <p>For next steps, read the <a href="http://aws.amazon.com/documentation/codedeploy">AWS CodeDeploy Documentation</a>.</p>
-  </div>
+
+    <h1>Order Your Food</h1>
+    <form id="foodOrderForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required><br><br>
+
+        <label for="food">Select Food:</label>
+        <select id="food">
+            <option value="pizza">Pizza</option>
+            <option value="burger">Burger</option>
+            <option value="pasta">Pasta</option>
+            <option value="sushi">Sushi</option>
+        </select><br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" required><br><br>
+
+        <button type="submit">Place Order</button>
+    </form>
+
+    <p id="orderSummary"></p>
+
+    <script>
+        document.getElementById("foodOrderForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var name = document.getElementById("name").value;
+            var food = document.getElementById("food").value;
+            var quantity = document.getElementById("quantity").value;
+
+            document.getElementById("orderSummary").innerHTML = 
+                "<strong>Order Confirmed!</strong><br>" +
+                "Name: " + name + "<br>" +
+                "Food: " + food + "<br>" +
+                "Quantity: " + quantity;
+        });
+    </script>
+
 </body>
 </html>
-
